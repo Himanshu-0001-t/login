@@ -21,14 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   while ($row = mysqli_fetch_assoc($result)) {
     if ($row['NAME'] == $name) {
+
       $exists = true;
 
-    } else {
-      $exists = false;
     }
-  }
+    ;
 
-  if ($exists == false) {
+  }
+  ;
+
+
+  if ($exists === false) {
 
     $sql = "INSERT INTO `user` (`ID`, `NAME`, `EMAIL`, `PASSWORD`) VALUES (NULL, '{$name}', '{$email}', '{$pass}')";
 
